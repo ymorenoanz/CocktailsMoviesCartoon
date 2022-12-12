@@ -1,6 +1,5 @@
 package com.yaritzama.cocktails_movies_cartoon.di
 
-import com.yaritzama.cocktails_movies_cartoon.data.apis.MovieAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
