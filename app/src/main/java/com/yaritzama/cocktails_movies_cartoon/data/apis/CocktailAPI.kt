@@ -6,17 +6,10 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MainAPI {
+interface CocktailAPI {
+    @GET("list.php")
+    suspend fun getDrinkList(@Query("i") i: String): Response<MainResponse>
 
-    @GET("character")
-    suspend fun getCharacterList(): Response<MainResponse>
-
-    @GET("now_playing/{api_key}&{region}")
-    suspend fun getMovieByRegion(@Query("region") region: String): Response<ResultResponse>
-
-    @GET("list.php/{i}")
-    suspend fun getDrink(@Query("i") i: String): Response<ResultResponse>
-
-    @GET("filter.php/{i}")
+    @GET("filter.php")
     suspend fun getDrinkByIngredient(@Query("i") ingredient: String): Response<ResultResponse>
 }

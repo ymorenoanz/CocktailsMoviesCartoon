@@ -12,12 +12,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
 
     @Binds
-    abstract fun providesCharacterRepository(impl: CharacterRepositoryImpl): CharacterRepository
-
-    @Binds
-    abstract fun providesMovieRepository(impl: MovieRepositoryImpl): MainRepository
-
-    @Binds
-    abstract fun providesCocktailRepository(impl: MainRepositoryImpl): CocktailRepository
-
+    abstract fun providesRepository(impl: MainRepositoryImpl): MainRepository
 }

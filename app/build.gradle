@@ -7,14 +7,19 @@ plugins {
 
 android {
     namespace 'com.yaritzama.cocktails_movies_cartoon'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.yaritzama.cocktails_movies_cartoon"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
+
+        buildConfigField  "String", "API_KEY_MOVIES", "\"c9c2bcc2f000da0aad14f99f7a6415aa\""
+        buildConfigField  "String", "BASE_URL_MOVIES", "\"https://api.themoviedb.org/3/movie/\""
+        buildConfigField  "String", "BASE_URL_CARTOON", "\"https://rickandmortyapi.com/api/\""
+        buildConfigField  "String", "BASE_URL_COCKTAILS", "\"https://www.thecocktaildb.com/api/json/v1/1/\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -67,9 +72,13 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     //Glide Compose
     implementation "com.github.skydoves:landscapist-glide:2.0.2"
+    // Paging Compose
+    implementation "com.google.accompanist:accompanist-pager:0.13.0"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.13.0"
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
     //Ktx
     implementation "androidx.fragment:fragment-ktx:1.5.4"
