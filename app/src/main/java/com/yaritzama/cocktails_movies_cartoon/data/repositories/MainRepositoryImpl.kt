@@ -23,14 +23,16 @@ class MainRepositoryImpl @Inject constructor(
             } ?: emptyList()
     }
 
-    override suspend fun getMovieByRegion(region: String): MainData {
+    override suspend fun getMovieByRegion(region: String): List<MainData> {
         val responseMovie = apiMovie.getMovieByRegion(BuildConfig.API_KEY_MOVIES, region)
-        return responseMovie.body()?.toDomain() ?: throw Exception("Network error")
+        return responseMovie.body()?.results?.map {
+            it?.toDomain() ?: MainData()
+        } ?: emptyList()
     }
 
 
    override suspend fun getDrinkList(): List<MainData> {
-        val response = apiCocktail.getDrinkList("i")
+        val response = apiCocktail.getDrinkList("list")
         return response.body()?.results?.map {
             it?.toDomain() ?: MainData()
         } ?: emptyList()

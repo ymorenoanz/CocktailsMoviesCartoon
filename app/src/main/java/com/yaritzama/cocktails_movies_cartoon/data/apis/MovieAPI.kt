@@ -12,5 +12,5 @@ interface MovieAPI {
     @GET("now_playing")
     suspend fun getMovieByRegion(
         @Query("api_key") apiKey: String = BuildConfig.API_KEY_MOVIES,
-        @Query("region") region: String): Response<ResultResponse>
+        @Query("region") region: String): Response<MainResponse>
 }

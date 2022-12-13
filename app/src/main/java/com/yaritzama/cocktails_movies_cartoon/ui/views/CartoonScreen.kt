@@ -1,10 +1,9 @@
-package com.yaritzama.cocktails_movies_cartoon.ui
+package com.yaritzama.cocktails_movies_cartoon.ui.views
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,6 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.skydoves.landscapist.glide.GlideImage
+import com.yaritzama.cocktails_movies_cartoon.ui.MainViewModel
 
 @Composable
 fun CartoonScreen(){

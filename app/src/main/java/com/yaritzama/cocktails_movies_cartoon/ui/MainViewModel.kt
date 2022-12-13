@@ -27,6 +27,8 @@ private val _listCartoon = mutableStateListOf<MainData>()
     val listCocktail: SnapshotStateList<MainData>
         get() = _listCocktail
 
+    var dataList = mutableStateOf<List<MainData>>(listOf())
+
     private val _listMovie = mutableStateListOf<MainData>()
     val listMovie: SnapshotStateList<MainData>
         get() = _listMovie
@@ -42,6 +44,7 @@ private val _listCartoon = mutableStateListOf<MainData>()
     init{
         getListCartoon()
         getListCocktail()
+        getListMovie()
     }
 
     fun switchViews(view: StateViews){
@@ -53,6 +56,16 @@ private val _listCartoon = mutableStateListOf<MainData>()
             val response = repo.getCharacterList()
             _listCartoon.addAll(response)
         }
+    }
+
+    private fun getListMovie(){
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repo.getMovieByRegion("mx")
+            _listMovie.addAll(response)
+        }
+    }
+
+    fun getMovieByRegion(region: String){
     }
 
 
@@ -70,11 +83,6 @@ private val _listCartoon = mutableStateListOf<MainData>()
         }
     }
 
-    fun getMovieByRegion(region: String){
-        viewModelScope.launch(Dispatchers.IO) {
-            val response = repo.getMovieByRegion(region)
-            _data.value = response.name.toString()
-        }
-    }
+
 
 }

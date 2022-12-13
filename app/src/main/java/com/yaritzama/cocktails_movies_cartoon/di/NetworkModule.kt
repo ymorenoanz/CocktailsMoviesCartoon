@@ -50,7 +50,7 @@ object NetworkModule{
     @Singleton
     @Named("CocktailAPI")
     fun providesRetrofitCocktail() = Retrofit.Builder()
-        .baseUrl("https://www.thecocktaildb.com/api/json/v1/1/")
+        .baseUrl(BuildConfig.BASE_URL_COCKTAILS)
         .addConverterFactory(GsonConverterFactory.create()).build()
 
     @Provides
