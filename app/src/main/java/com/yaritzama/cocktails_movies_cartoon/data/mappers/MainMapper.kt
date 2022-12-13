@@ -12,3 +12,11 @@ fun ResultResponse.toDomain(): MainData{
         poster_path = this.poster_path
     )
 }
+
+fun DrinksResponse.toDomain(): MainData{
+    return MainData(
+        idDrink = this.idDrinks,
+        strDrink = this.strDrink,
+        strDrinkThumb = this.strDrinkThumb
+    )
+}

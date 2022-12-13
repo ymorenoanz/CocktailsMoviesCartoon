@@ -2,6 +2,7 @@ package com.yaritzama.cocktails_movies_cartoon.domain.models
 
 data class MainData(
     val id: Int? = 0,
+    val idDrink: String? = "",
     val name: String? = "",
     val title: String? = "",
     val poster_path: String? = "",

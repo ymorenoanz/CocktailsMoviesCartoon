@@ -43,7 +43,7 @@ private val _listCartoon = mutableStateListOf<MainData>()
 
     init{
         getListCartoon()
-        getListCocktail()
+        getCocktailByIngredient()
         getListMovie()
     }
 
@@ -68,18 +68,18 @@ private val _listCartoon = mutableStateListOf<MainData>()
     fun getMovieByRegion(region: String){
     }
 
+    //PENDING
+    private fun getCocktailByIngredient(){
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repo.getDrinkByIngredient("sprite")
+            _listCocktail.addAll(response)
+        }
+    }
 
     private fun getListCocktail(){
         viewModelScope.launch(Dispatchers.IO) {
             val response = repo.getDrinkList()
             _listCocktail.addAll(response)
-        }
-    }
-
-    fun getCocktailByIngredient(ingredient: String){
-        viewModelScope.launch(Dispatchers.IO) {
-            val response = repo.getDrinkByIngredient(ingredient)
-            _data.value = response.name.toString()
         }
     }
 

@@ -1,4 +1,4 @@
-package com.yaritzama.cocktails_movies_cartoon.ui
+package com.yaritzama.cocktails_movies_cartoon.ui.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.PopupProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.skydoves.landscapist.glide.GlideImage
+import com.yaritzama.cocktails_movies_cartoon.ui.MainViewModel
 
 @Composable
 fun MovieScreen() {
@@ -56,6 +57,7 @@ fun MovieScreen() {
     }
 }
 
+@Composable
 fun DropdownMenu(
     expanded: Boolean,
     onDismissRequest: () -> Unit,

@@ -17,6 +17,7 @@ import com.yaritzama.cocktails_movies_cartoon.domain.models.StateViews
 import com.yaritzama.cocktails_movies_cartoon.ui.theme.Cocktails_Movies_CartoonTheme
 import com.yaritzama.cocktails_movies_cartoon.ui.views.CartoonScreen
 import com.yaritzama.cocktails_movies_cartoon.ui.views.CocktailScreen
+import com.yaritzama.cocktails_movies_cartoon.ui.views.MovieScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -109,6 +110,7 @@ private fun Body(modifier: Modifier= Modifier, vm: MainViewModel) {
             }
 
             StateViews.viewCocktails ->{
+                //PENDING
                 CocktailScreen()
             }
         }

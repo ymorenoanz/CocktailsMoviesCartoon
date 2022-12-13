@@ -6,5 +6,5 @@ interface MainRepository {
     suspend fun getCharacterList(): List<MainData>
     suspend fun getMovieByRegion(region: String): List<MainData>
     suspend fun getDrinkList(): List<MainData>
-    suspend fun getDrinkByIngredient(i: String): MainData
+    suspend fun getDrinkByIngredient(i: String): List<MainData>
 }

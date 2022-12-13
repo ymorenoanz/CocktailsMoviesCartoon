@@ -47,8 +47,7 @@ fun CocktailScreen(){
                             Box(modifier = Modifier
                                 .height(100.dp)
                                 .width(100.dp)){
-                                GlideImage(imageModel = {"https://rickandmortyapi.com/api/character/avatar/" +
-                                        "${item.id}.jpeg"})
+                                GlideImage(imageModel = {item.strDrinkThumb.toString()})
                             }
                         }
                     }
@@ -57,7 +56,7 @@ fun CocktailScreen(){
     }
 }
 
-fun DropdownMenu(
+fun DropdownMenuCocktail(
     expanded: Boolean,
     onDismissRequest: () -> Unit,
     modifier: Modifier = Modifier,
@@ -84,7 +83,7 @@ fun DropDown(){
                 .fillMaxWidth()
                 .clickable(onClick = { expanded = true })
                 .background(Color.Gray))
-        DropdownMenu(expanded = expanded,
+        DropdownMenuCocktail(expanded = expanded,
             onDismissRequest = {expanded = false},
             modifier = Modifier
                 .fillMaxWidth()
