@@ -68,7 +68,6 @@ private val _listCartoon = mutableStateListOf<MainData>()
     fun getMovieByRegion(region: String){
     }
 
-    //PENDING
     private fun getCocktailByIngredient(){
         viewModelScope.launch(Dispatchers.IO) {
             val response = repo.getDrinkByIngredient("sprite")
